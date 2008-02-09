@@ -1,5 +1,6 @@
 %define		plugin		pageredirect
 Summary:	DokuWiki Page Redirect Plugin
+Summary(pl.UTF-8):	Wtyczka Page Redirect (przekierowywania stron) dla DokuWiki
 Name:		dokuwiki-plugin-%{plugin}
 Version:	2
 Release:	0.2
@@ -20,6 +21,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 This plugin allows you to redirect users between pages and namespaces
 by adding a particular pattern to a page.
+
+%description -l pl.UTF-8
+Ta wtyczka pozwala przekierowywać użytkowników między stronami i
+przestrzeniami nazw poprzez dodawanie określonych oznaczeń na stronie.
 
 %prep
 %setup -q -n %{plugin}
