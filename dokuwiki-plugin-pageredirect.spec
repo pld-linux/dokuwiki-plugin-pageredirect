@@ -3,7 +3,7 @@ Summary:	DokuWiki Page Redirect Plugin
 Summary(pl.UTF-8):	Wtyczka Page Redirect (przekierowywania stron) dla DokuWiki
 Name:		dokuwiki-plugin-%{plugin}
 Version:	2
-Release:	0.2
+Release:	1
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	http://wiki.zyberdog.dk/_media/php/dw/pageredirect/pageredirect_current.zip
@@ -15,8 +15,8 @@ Requires:	dokuwiki >= 20061106
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_dokudir	/usr/share/dokuwiki
-%define		_plugindir	%{_dokudir}/lib/plugins/%{plugin}
+%define		dokudir		/usr/share/dokuwiki
+%define		plugindir	%{dokudir}/lib/plugins/%{plugin}
 
 %description
 This plugin allows you to redirect users between pages and namespaces
@@ -32,8 +32,8 @@ przestrzeniami nazw poprzez dodawanie określonych oznaczeń na stronie.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_plugindir}
-cp -a . $RPM_BUILD_ROOT%{_plugindir}
+install -d $RPM_BUILD_ROOT%{plugindir}
+cp -a . $RPM_BUILD_ROOT%{plugindir}
 
 # find locales
 sh %{SOURCE1} %{name}.lang
@@ -43,8 +43,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%dir %{_plugindir}
-%{_plugindir}/*.php
-%{_plugindir}/*.css
-%{_plugindir}/conf
-%{_plugindir}/images
+%dir %{plugindir}
+%{plugindir}/*.php
+%{plugindir}/*.css
+%{plugindir}/conf
+%{plugindir}/images
