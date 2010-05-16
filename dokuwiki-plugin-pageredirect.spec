@@ -11,6 +11,7 @@ Source0:	http://wiki.zyberdog.dk/_media/php/dw/pageredirect/pageredirect_current
 Source1:	dokuwiki-find-lang.sh
 Patch0:		%{name}-pagematch.patch
 URL:		http://wiki.splitbrain.org/plugin:page_redirector
+BuildRequires:	unzip
 Requires:	dokuwiki >= 20061106
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
