@@ -1,0 +1,13 @@
+--- pageredirect/action.php~	2007-01-24 14:36:36.000000000 +0200
++++ pageredirect/action.php	2010-08-24 17:30:13.450389203 +0300
+@@ -91,7 +91,9 @@
+ 	}
+ 
+ 	function handle_pageredirect_metadata(&$event, $param) { 
+-		unset($event->data->meta['relation']['isreplacedby']); 
++		if (isset($event->data->meta['relation'])) {
++			unset($event->data->meta['relation']['isreplacedby']); 
++		}
+ 	}
+ 
+ }
