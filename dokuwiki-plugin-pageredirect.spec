@@ -3,7 +3,7 @@ Summary:	DokuWiki Page Redirect Plugin
 Summary(pl.UTF-8):	Wtyczka Page Redirect (przekierowywania stron) dla DokuWiki
 Name:		dokuwiki-plugin-%{plugin}
 Version:	2
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	http://wiki.zyberdog.dk/_media/php/dw/pageredirect/pageredirect_current.zip
@@ -11,6 +11,7 @@ Source0:	http://wiki.zyberdog.dk/_media/php/dw/pageredirect/pageredirect_current
 Source1:	dokuwiki-find-lang.sh
 Patch0:		%{name}-pagematch.patch
 Patch1:		mute-warning.patch
+Patch2:		preserve-section.patch
 URL:		http://www.dokuwiki.org/plugin:page_redirector
 BuildRequires:	unzip
 Requires:	dokuwiki >= 20061106
@@ -33,6 +34,7 @@ przestrzeniami nazw poprzez dodawanie określonych oznaczeń na stronie.
 %setup -q -n %{plugin}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT

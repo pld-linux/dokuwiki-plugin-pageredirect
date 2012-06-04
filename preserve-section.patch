@@ -1,0 +1,22 @@
+--- pageredirect/action.php	2012-06-04 15:32:26.364418325 +0300
++++ pageredirect/action.php	2012-06-04 15:32:49.548728621 +0300
+@@ -63,9 +63,17 @@
+ 				session_start();
+ 				$_SESSION[DOKU_COOKIE]['redirect'] = $ID;
+ 			}
+-	
++
++			// preserve #section from $page
++			list($page, $section) = explode('#', $page, 2);
++			if (isset($section)) {
++				$section = '#' . $section;
++			} else {
++				$section = '';
++			}
++
+ 			// redirect
+-			header("Location: ".wl($page, Array('redirect' => $redirect), TRUE, '&')); 
++			header("Location: ".wl($page, Array('redirect' => $redirect), TRUE, '&'). $section);
+ 			exit(); 
+ 		} 
+ 	}
