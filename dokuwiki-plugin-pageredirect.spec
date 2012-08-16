@@ -4,13 +4,13 @@
 Summary:	DokuWiki Page Redirect Plugin
 Summary(pl.UTF-8):	Wtyczka Page Redirect (przekierowywania stron) dla DokuWiki
 Name:		dokuwiki-plugin-%{plugin}
-Version:	20120612
+Version:	20120816
 Release:	1
 License:	GPL v2
 Group:		Applications/WWW
-Source0:	https://github.com/glensc/dokuwiki-plugin-pageredirect/tarball/master/%{name}-%{version}.tgz
-# Source0-md5:	c65552dc87741be782ae71ddbe7073b9
-URL:		http://www.dokuwiki.org/plugin:page_redirector
+Source0:	https://github.com/glensc/dokuwiki-plugin-pageredirect/tarball/%{version}/%{name}-%{version}.tgz
+# Source0-md5:	41fa8fe7eefb0eb496516a2b0f8be6fe
+URL:		https://www.dokuwiki.org/plugin:pageredirect
 BuildRequires:	rpmbuild(macros) >= 1.553
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	dokuwiki >= 20061106
