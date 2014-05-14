@@ -4,12 +4,12 @@
 Summary:	DokuWiki Page Redirect Plugin
 Summary(pl.UTF-8):	Wtyczka Page Redirect (przekierowywania stron) dla DokuWiki
 Name:		dokuwiki-plugin-%{plugin}
-Version:	20120816
-Release:	2
+Version:	20140414
+Release:	1
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	https://github.com/glensc/dokuwiki-plugin-pageredirect/tarball/%{version}/%{name}-%{version}.tgz
-# Source0-md5:	41fa8fe7eefb0eb496516a2b0f8be6fe
+# Source0-md5:	ca7026838d5dc84eeabddb958f479d45
 URL:		https://www.dokuwiki.org/plugin:pageredirect
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.553
@@ -33,13 +33,13 @@ przestrzeniami nazw poprzez dodawanie określonych oznaczeń na stronie.
 
 %prep
 %setup -qc
-# for github urls:
-mv *-%{plugin}-*/* .
+mv *-%{plugin}-*/{.??*,*} .
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{plugindir}
 cp -a . $RPM_BUILD_ROOT%{plugindir}
+rm -rf $RPM_BUILD_ROOT%{plugindir}/{.travis.yml,_test}
 
 # find locales
 %find_lang %{name}.lang
