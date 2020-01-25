@@ -1,6 +1,5 @@
 %define		plugin	pageredirect
 %define		php_min_version 5.3.0
-%include	/usr/lib/rpm/macros.php
 Summary:	DokuWiki Page Redirect Plugin
 Summary(pl.UTF-8):	Wtyczka Page Redirect (przekierowywania stron) dla DokuWiki
 Name:		dokuwiki-plugin-%{plugin}
